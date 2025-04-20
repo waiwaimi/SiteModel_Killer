@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <!-- Select the framework(s) you wish to target.
+        Rhino 6: net45
+        Rhino 7: net48
+        Rhino 8 Windows: net48, net7.0, net7.0-windows, net7.0-windows10.0.22000.0, etc
+        Rhino 8 Mac: net7.0, net7.0-macos, net7.0-macos12.0, etc
+    -->
+    <TargetFramework>net48</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <TargetExt>.gha</TargetExt>
+	<RhinoCommonSDK>7</RhinoCommonSDK>
+	<UseRhinoCommon>true</UseRhinoCommon>
+    <NoWarn>NU1701;NETSDK1086</NoWarn>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- Specifies information for Assembly and Yak -->
+    <Version>1.0</Version>
+    <Title>SiteModelKiller</Title>
+    <Company>SiteModelKiller Authors</Company>
+    <Description>Description of SiteModelKiller</Description>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="icon\GenBuildingsIcon.png" />
+    <None Remove="Resources\GenBuildingsIcon.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="icon\GenBuildingsIcon.png" />
+    <EmbeddedResource Include="Resources\GenBuildingsIcon.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Grasshopper" Version="7.0.20314.3001" Condition="$(TargetFramework) == 'net48'" ExcludeAssets="runtime" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="System.Drawing" />
+	</ItemGroup>
+  
+  <!-- For Windows only builds -->
+  <PropertyGroup Condition="$(TargetFramework.Contains('-windows')) or $(TargetFramework.StartsWith('net4'))">
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <!-- Reference WinForms for .NET 7.0 on macOS -->
+  <ItemGroup Condition="!($(TargetFramework.Contains('-windows')) or $(TargetFramework.StartsWith('net4')))">
+	  
+    <!-- Rhino 8.11 and later you can use this -->
+    <!-- <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" /> -->
+    
+    <!-- Rhino 8.10 and earlier -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" ExcludeAssets="all" GeneratePathProperty="true" />
+    <Reference Include="$(PkgMicrosoft_NETFramework_ReferenceAssemblies_net48)\build\.NETFramework\v4.8\System.Windows.Forms.dll" Private="False" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" ExcludeAssets="runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <Target Name="CopyPdbForMonoDebugging" AfterTargets="AfterBuild">
+    <!-- Enable debugging in Rhino 6/7 on Mac -->
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(TargetDir)$(TargetName).gha.pdb" Condition="$([MSBuild]::IsOSPlatform(OSX)) and $(TargetFramework.StartsWith('net4')) and Exists('$(TargetDir)$(TargetName).pdb')" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y &quot;$(TargetDir)$(TargetName).gha&quot; &quot;%25APPDATA%25\Grasshopper\Libraries\&quot;" />
+  </Target>
+
+</Project>
