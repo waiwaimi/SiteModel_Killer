@@ -24,10 +24,10 @@ namespace SiteModelKiller.Components
         /// </summary>
         protected override void RegisterInputParams(GH_InputParamManager pManager)
         {
-            pManager.AddGenericParameter("Text", "Text", "Text including floors...ect.", GH_ParamAccess.list);
-            pManager.AddCurveParameter("BuildingCrvs", "BuildingCrvs", "Building curves", GH_ParamAccess.list);
-            pManager.AddNumberParameter("FloorHeight", "FloorHeight", "The height of each floor", GH_ParamAccess.item, 3.0);
-            pManager.AddGeometryParameter("BaseFrame", "BaseFrame", "The base frame for the site model", GH_ParamAccess.item);
+            pManager.AddGenericParameter("Text", "Text", "Text including floors...etc. Input type: Guids", GH_ParamAccess.list);
+            pManager.AddCurveParameter("BuildingCrvs", "BuildingCrvs", "Building curves. Input type: Curve", GH_ParamAccess.list);
+            pManager.AddNumberParameter("FloorHeight", "FloorHeight", "The height of each floor. Input type: Number Slider & Number", GH_ParamAccess.item, 3.0);
+            pManager.AddGeometryParameter("BaseFrame", "BaseFrame", "The base frame for the site model. Input type: Curve & Brep", GH_ParamAccess.item);
         }
 
         /// <summary>

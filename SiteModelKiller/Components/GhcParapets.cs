@@ -24,9 +24,9 @@ namespace SiteModelKiller.Components
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddBrepParameter("Buildings", "Buildings", "The building breps to generate parapets ", GH_ParamAccess.list);
-            pManager.AddNumberParameter("ParapetHeight", "ParapetHeight", "The height of the parapets", GH_ParamAccess.item, 1.0);
-            pManager.AddNumberParameter("ParapetWidth", "ParapetWidth", "The width (thick) of the parapets", GH_ParamAccess.item, 0.2);
+            pManager.AddBrepParameter("Buildings", "Buildings", "The building breps to generate parapets. Input type: Brep", GH_ParamAccess.list);
+            pManager.AddNumberParameter("ParapetHeight", "ParapetHeight", "The height of the parapets. Input type: Number Slider & Number", GH_ParamAccess.item, 1.0);
+            pManager.AddNumberParameter("ParapetWidth", "ParapetWidth", "The width (thick) of the parapets. Input type: Number Slider & Number", GH_ParamAccess.item, 0.2);
         }
 
         /// <summary>
