@@ -70,7 +70,7 @@ namespace SiteModelKiller.Components
                 // return Resources.IconForThisComponent;
                 //return null;
                 var asm = System.Reflection.Assembly.GetExecutingAssembly();
-                using (var stream = asm.GetManifestResourceStream(" SiteModelKiller.icon.GenBuildingsIcon.png"))
+                using (var stream = asm.GetManifestResourceStream("SiteModelKiller.icon.GenBuildingsIcon.png"))
                 {
                     return stream != null ? new System.Drawing.Bitmap(stream) : null;
                 }
