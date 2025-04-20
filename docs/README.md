@@ -3,6 +3,9 @@
 ![Static Badge](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 [![Latest Release](https://img.shields.io/github/v/release/waiwaimi/SiteModel_Killer?display_name=release&style=flat-square&logo=Github&logoColor=white&color=sucess)](https://github.com/waiwaimi/SiteModel_Killer/releases/latest)
 
+<a href='https://ko-fi.com/N4N61DT6RU' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+
 這是一個可以將基地圖一鍵生成為3D基地模的Grasshopper插件，1.0版本來自於同系紀學長
 
 此版本將初代重新改良重構，擁有**更高的生成速度(生成一座街廓僅需幾秒鐘)** 以及 **更精確的生成模型**，並且改善初代邊角會呈現倒角而非銳角的問題
