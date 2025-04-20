@@ -37,6 +37,10 @@
 
 3. 騎樓生成
 
+## Contribute
+
+- [ddddo](https://github.com/ddddo86) 撰寫使用教學，協助偵錯(例如多了一個空格導致作者瞎忙了兩個小時)
+
 ## 聯繫我
 
 如果你在這之中遇到問題了，可以通過[發布Issue](https://github.com/waiwaimi/SiteModel_Killer/issues)來聯絡我
@@ -44,3 +48,7 @@
 若你是東海大學建築系學生，也可以透過系辦FB社團找到我
 
 如果我很忙，我可能不會回覆你，不說了我去熬夜了 \_(┐「﹃ﾟ｡)\_
+
+## License
+
+[MIT](/LICENSE)
