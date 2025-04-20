@@ -3,8 +3,6 @@
 ![Static Badge](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 [![Latest Release](https://img.shields.io/github/v/release/waiwaimi/SiteModel_Killer?display_name=release&style=flat-square&logo=Github&logoColor=white&color=sucess)](https://github.com/waiwaimi/SiteModel_Killer/releases/latest)
 
-<a href='https://ko-fi.com/N4N61DT6RU' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
 
 這是一個可以將基地圖一鍵生成為3D基地模的Grasshopper插件，1.0版本來自於同系紀學長
 
@@ -51,6 +49,11 @@
 若你是東海大學建築系學生，也可以透過系辦FB社團找到我
 
 如果我很忙，我可能不會回覆你，不說了我去熬夜了 \_(┐「﹃ﾟ｡)\_
+
+如果你想支持我的Project  歡迎在Ko-fi上Donate!!!
+
+<a href='https://ko-fi.com/N4N61DT6RU' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 
 ## License
 
