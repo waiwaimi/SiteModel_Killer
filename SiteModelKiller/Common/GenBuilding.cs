@@ -168,16 +168,19 @@ namespace SiteModelKiller.Common
             return buildings;
         }
 
-        public static List<Brep> GenerateParapets(List<Brep> buildings, double parapetHight, double thick) 
+        public static List<Brep> GenerateParapets(List<Brep> buildings, double parapetHight, double thick, bool includeBuilding) 
         {
             double tol = Rhino.RhinoDoc.ActiveDoc.ModelAbsoluteTolerance; //tolerance
+            double angleTol = RhinoMath.ToRadians(1.0); //angle tolerance
 
             List<Brep> parapets = new List<Brep>();
+            List<Brep> massing = new List<Brep>();
             List<Curve> parapetBounds = new List<Curve>();
 
             //parapet boundary
-            foreach (var b in buildings)
+            for (int i = 0; i < buildings.Count; i++)
             {
+                Brep b = buildings[i];
                 BrepFace topFace = null;
                 double maxZ = double.MinValue; //finding highest face
 
@@ -202,14 +205,16 @@ namespace SiteModelKiller.Common
                     BrepLoop outerLoop = topFace.Loops.First(l => l.LoopType == BrepLoopType.Outer);
                     Curve bound = outerLoop.To3dCurve();
                     parapetBounds.Add(bound);
+                    massing.Add(b);
                 }
             }
 
             //extrude & offset
             List<Curve> test = new List<Curve>();
 
-            foreach (Curve outline in parapetBounds)
+            for (int i = 0; i < parapetBounds.Count; i++)
             {
+                Curve outline = parapetBounds[i];
                 //offset direction
                 Plane plane;
                 if (!outline.IsClosed || !outline.TryGetPlane(out plane))
@@ -260,8 +265,33 @@ namespace SiteModelKiller.Common
                 allParts.AddRange(topCap);
                 allParts.AddRange(bottomCap);
                 Brep[] result = Brep.JoinBreps(allParts, tol);
+                
 
-                parapets.AddRange(result);
+                //building + parapets
+                if (includeBuilding)
+                {
+                    Brep[] output = result;
+                    List<Brep> toUnion = new List<Brep>();
+
+                    if (result != null) 
+                    {
+                        toUnion.AddRange(result);
+                        toUnion.Add(massing[i]);
+
+                        Brep[] unioned = Brep.CreateBooleanUnion(toUnion, tol);
+                        output = unioned; //building + parapets
+                    }
+
+                    if(output != null)
+                        parapets.AddRange(output);
+                }
+                else
+                {
+                    parapets.AddRange(result);
+                }
+
+
+
             }
 
             return parapets;

@@ -27,6 +27,7 @@ namespace SiteModelKiller.Components
             pManager.AddBrepParameter("Buildings", "Buildings", "The building breps to generate parapets. Input type: Brep", GH_ParamAccess.list);
             pManager.AddNumberParameter("ParapetHeight", "ParapetHeight", "The height of the parapets. Input type: Number Slider & Number", GH_ParamAccess.item, 1.0);
             pManager.AddNumberParameter("ParapetWidth", "ParapetWidth", "The width (thick) of the parapets. Input type: Number Slider & Number", GH_ParamAccess.item, 0.2);
+            pManager.AddBooleanParameter("includeBuilding?", "includeBuilding?", "If the Parapets make boolean union with the building. Input type: Boolean", GH_ParamAccess.item, false);
         }
 
         /// <summary>
@@ -46,11 +47,13 @@ namespace SiteModelKiller.Components
             List<Brep> iBuildings = new List<Brep>();
             double iParapetHeight = 0.0;
             double iParapetWidth = 0.0;
+            bool iIncludeBuilding = false;
 
             DA.GetDataList(0, iBuildings);
             DA.GetData(1, ref iParapetHeight);
             DA.GetData(2, ref iParapetWidth);
-            List<Brep> oParapets = GenBuilding.GenerateParapets(iBuildings,iParapetHeight,iParapetWidth);
+            DA.GetData(3, ref iIncludeBuilding);
+            List<Brep> oParapets = GenBuilding.GenerateParapets(iBuildings,iParapetHeight,iParapetWidth,iIncludeBuilding);
 
             DA.SetDataList(0, oParapets);
         }
@@ -64,7 +67,11 @@ namespace SiteModelKiller.Components
             {
                 //You can add image files to your project resources and access them like this:
                 // return Resources.IconForThisComponent;
-                return null;
+                var asm = System.Reflection.Assembly.GetExecutingAssembly();
+                using (var stream = asm.GetManifestResourceStream("SiteModelKiller.icon.GenParapetsIcon.png"))
+                {
+                    return stream != null ? new System.Drawing.Bitmap(stream) : null;
+                }
             }
         }
 
