@@ -2,12 +2,12 @@
 
 | Link | Description |
 |---|---|
-| [Install Plug-in](Tutorial.md#step1) | 手把手教你如何安裝插件 |
-| [How to use](Tutorial.md#step2) | 手把手教你如何使用插件 |
-| [- 前置作業](Tutorial#前置作業) | |
-| [- 生成量體](Tutorial#生成量體) | |
-| [- 生成女兒牆](Tutorial#生成女兒牆) | |
-| [常見問題](Tutorial.md#常見問題) | 解答各種疑難雜症 |
+| [Install Plug-in](tutorial.md#step1) | 手把手教你如何安裝插件 |
+| [How to use](tutorial.md#step2) | 手把手教你如何使用插件 |
+| [- 前置作業](tutorial.md#前置作業) | |
+| [- 生成量體](tutorial.md#生成量體) | |
+| [- 生成女兒牆](tutorial.md#生成女兒牆) | |
+| [常見問題](tutorial.md#常見問題) | 解答各種疑難雜症 |
 
 ## Step1.
 
