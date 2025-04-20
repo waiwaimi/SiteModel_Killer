@@ -4,6 +4,9 @@
 |---|---|
 | [Install Plug-in](Tutorial.md#step1) | 手把手教你如何安裝插件 |
 | [How to use](Tutorial.md#step2) | 手把手教你如何使用插件 |
+| [- 前置作業](Tutorial#前置作業) | |
+| [- 生成量體](Tutorial#生成量體) | |
+| [- 生成女兒牆](Tutorial#生成女兒牆) | |
 | [常見問題](Tutorial.md#常見問題) | 解答各種疑難雜症 |
 
 ## Step1.
@@ -22,11 +25,11 @@
 
 3. 右鍵檔案進入內容，將下方的 `解除封鎖` 勾選
 
-![image](https://github.com/waiwaimi/SiteModel_Killer/blob/master/docs/pic/plugin_unlock.png)
+<img src="https://github.com/waiwaimi/SiteModel_Killer/blob/master/docs/pic/plugin_unlock.png"  width="60%" height="30%">
 
 4. 將Rhino關閉後重新開啟即可使用，若成功安裝則顯示如下
 
-![image](https://github.com/waiwaimi/SiteModel_Killer/blob/master/docs/pic/install_plugin_success.jpg)
+<img src="https://github.com/waiwaimi/SiteModel_Killer/blob/master/docs/pic/install_plugin_success.jpg"  width="60%" height="30%">
 
 ## Step2.
 
@@ -102,7 +105,11 @@
 
 這個是面反轉的問題，建議將原本的曲線炸開後再生成一次即可，但其實不影響模型，不嫌棄的話也可以不用理會
 
-### 5.看完教學我還是不會用Grasshopper怎麼辦
+### 5.可以更新Plug-in版本嗎
+
+可以，但執行原有`gh`檔時，可能會需要啟動較久時間
+
+### 6.看完教學我還是不會用Grasshopper怎麼辦
 
 本專案不負責教學Grasshopper，請自行上網查詢或是詢問身旁同學
 
