@@ -25,12 +25,15 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <None Remove="icon\GemParapetsIcon.png" />
     <None Remove="icon\GenBuildingsIcon.png" />
+    <None Remove="icon\GenParapetsIcon.png" />
     <None Remove="Resources\GenBuildingsIcon.png" />
   </ItemGroup>
   
   <ItemGroup>
     <EmbeddedResource Include="icon\GenBuildingsIcon.png" />
+    <EmbeddedResource Include="icon\GenParapetsIcon.png" />
     <EmbeddedResource Include="Resources\GenBuildingsIcon.png" />
   </ItemGroup>
   

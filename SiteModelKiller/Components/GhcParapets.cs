@@ -64,7 +64,11 @@ namespace SiteModelKiller.Components
             {
                 //You can add image files to your project resources and access them like this:
                 // return Resources.IconForThisComponent;
-                return null;
+                var asm = System.Reflection.Assembly.GetExecutingAssembly();
+                using (var stream = asm.GetManifestResourceStream("SiteModelKiller.icon.GenParapetsIcon.png"))
+                {
+                    return stream != null ? new System.Drawing.Bitmap(stream) : null;
+                }
             }
         }
 
