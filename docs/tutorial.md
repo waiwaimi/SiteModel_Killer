@@ -9,7 +9,7 @@
 
 ### 下載插件
 
-至 [下載連結](https://github.com/waiwaimi/SiteModel_Killer/releases) 下載最新版本的插件，檔名應為`SiteModelKiller_v2.X.gha`
+至 [下載連結](https://github.com/waiwaimi/SiteModel_Killer/releases) 下載最新版本的插件，檔名應為`SiteModelKiller.gha`
 
 ![image](https://github.com/waiwaimi/SiteModel_Killer/blob/main/docs/pic/download_release.png)
 
@@ -17,7 +17,7 @@
 
 1. 開啟Grasshopper後，從左上角找到 `File > Special Folders > Components Folder`
 
-2. 將`SiteModelKiller_v2.X.gha`檔案放入該資料夾
+2. 將`SiteModelKiller.gha`檔案放入該資料夾
 
 3. 右鍵檔案進入內容，將下方的 `解除封鎖` 勾選
 
@@ -29,3 +29,12 @@
 
 ## Step2.
 
+- 待編輯
+
+使用時請注意單位!!!
+並且將所有文字和線壓平不然跑不出來!!
+
+教學:
+底座可以是封閉平面曲線 or 平面
+自行使用的話文字們要放在Guid裡面(範例檔案有)
+小提醒:線太髒沒清乾淨也會破面或跑不出來喔 :)

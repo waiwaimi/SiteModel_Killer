@@ -1,5 +1,6 @@
 # 基地模殺手 SiteModel Killer 2.0
 
+![Static Badge](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 [![Latest Release](https://img.shields.io/github/v/release/waiwaimi/SiteModel_Killer?display_name=release&style=flat-square&logo=Github&logoColor=white&color=sucess)](https://github.com/waiwaimi/SiteModel_Killer/releases/latest)
 
 這是一個可以將基地圖一鍵生成為3D基地模的Grasshopper插件，1.0版本來自於同系紀學長
@@ -24,9 +25,9 @@
 
 1. 自動讀取樓層
 
-2. 可自行調整樓層高度(預設為3m)
+2. 可自行設定樓層高度(預設為3m)
 
-3. 可興建女兒牆(也提供調整高度的選項)
+3. 興建女兒牆(可指定特定量體，並可自行設定高度及厚度)
 
 ### Planning
 
