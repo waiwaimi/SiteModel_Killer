@@ -50,7 +50,7 @@
 
 如果我很忙，我可能不會回覆你，不說了我去熬夜了 \_(┐「﹃ﾟ｡)\_
 
-如果你想支持我的Project  歡迎在Ko-fi上Donate!!!
+如果你想支持我的Project，歡迎在Ko-fi上Donate!!!
 
 <a href='https://ko-fi.com/N4N61DT6RU' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
